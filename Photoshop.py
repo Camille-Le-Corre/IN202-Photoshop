@@ -183,7 +183,7 @@ def rotate_droite():
             mat_res[i][j] = mat[nbrLig(mat)-1-j][i]
     modify(mat_res)
 
-def flou():
+def flou():            # fonction non optimisée mais permet d'avoir un flou plus homogène que sa version mieux optimisée
     mat=loading(nomImgCourante)
     for i in range(nbrLig(mat)):
         for j in range(nbrCol(mat)):
@@ -251,7 +251,7 @@ def modif_lum(val):
             mat_res[i][j] = (mat[i][j][0]+val, mat[i][j][1]+val, mat[i][j][2]+val, 255)
     modify(mat_res)
 
-def bruitage():
+def bruitage():        # non optimisé
     mat=loading(nomImgCourante)
     mat_res = [[(0, 0, 0, 0)]* nbrCol(mat) for i in range(nbrLig(mat))]
     for i in range(nbrLig(mat_res)):
